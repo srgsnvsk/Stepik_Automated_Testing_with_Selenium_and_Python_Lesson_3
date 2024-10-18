@@ -41,14 +41,14 @@ class SunInJuly(unittest.TestCase):
         self.assertEqual(
             reg_page("http://suninjuly.github.io/registration1.html"),
             "Congratulations! You have successfully registered!",
-            "registration is failed",
+            "Registration 1 is failed",
         )
 
     def test_reg2(self):
         self.assertEqual(
             reg_page("http://suninjuly.github.io/registration2.html"),
             "Congratulations! You have successfully registered!",
-            "registration is failed",
+            "Registration 2 is failed",
         )
 
 
