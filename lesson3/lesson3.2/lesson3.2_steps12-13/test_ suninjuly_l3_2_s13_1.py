@@ -1,4 +1,5 @@
 # решение задачи
+# вариант №1
 
 import time
 import unittest
@@ -40,7 +41,7 @@ class SunInJuly(unittest.TestCase):
         self.assertEqual(
             welcome_text,
             welcome_text_elt.text,
-            "Поздравляем! Вы успешно зарегистировались!",
+            "Congratulations! You have successfully registered!",
         )
 
     def test_reg2(self):
@@ -75,7 +76,7 @@ class SunInJuly(unittest.TestCase):
         self.assertEqual(
             welcome_text,
             welcome_text_elt.text,
-            "Поздравляем! Вы успешно зарегистировались!",
+            "Congratulations! You have successfully registered!",
         )
 
 
