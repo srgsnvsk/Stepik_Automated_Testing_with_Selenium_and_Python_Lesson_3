@@ -1,6 +1,5 @@
 # теория
-# запуск файла pytest -s -v test_fixture2_l3_4_s3_1.py
-
+# запуск файла pytest -s -v test_fixture3_l3_4_s4_2.py
 
 import pytest
 from selenium import webdriver
@@ -13,7 +12,10 @@ link = "http://selenium1py.pythonanywhere.com/"
 def browser():
     print("\nstart browser for test..")
     browser = webdriver.Chrome()
-    return browser
+    yield browser
+    # этот код выполнится после завершения теста
+    print("\nquit browser..")
+    browser.quit()
 
 
 class TestMainPage1:
