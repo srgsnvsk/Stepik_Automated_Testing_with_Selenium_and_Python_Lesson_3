@@ -1,6 +1,6 @@
 # теория
 # тест с маркировкой
-# запуск теста с маркировкой smoke pytest -s -v -m test_fixture8_l3_5_s2_1.py
+# запуск теста с маркировкой smoke pytest -s -v -m smoke test_fixture8_l3_5_s2_1.py
 
 import pytest
 from selenium import webdriver

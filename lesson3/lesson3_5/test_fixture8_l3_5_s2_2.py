@@ -1,7 +1,7 @@
 # теория
 # тест с маркировкой
 # маркировки не зарегистрированы в pytest.ini, отобразится warning
-# запуск теста с маркировкой smoke pytest -s -v -m test_fixture8_l3_5_s2_2.py
+# запуск теста с маркировкой smoke pytest -s -v -m smoke test_fixture8_l3_5_s2_2.py
 
 import pytest
 from selenium import webdriver
