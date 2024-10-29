@@ -1,5 +1,5 @@
 # теория c с объяснениями
-# запуск файла pytest -s -v test_fixture4_l3_4_s5_1.py
+# запуск файла pytest -s -v test_fixture4_l3_4_s5_2.py
 
 import pytest
 from selenium import webdriver
@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 link = "http://selenium1py.pythonanywhere.com/"
 
 
+# фикустура вызывается один раз для класса TestMainPage1
 @pytest.fixture(scope="class")
 def browser():
     print("\nstart browser for test..")
