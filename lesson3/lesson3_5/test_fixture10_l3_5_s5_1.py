@@ -1,7 +1,8 @@
 # теория
-# пропуск тестов
-# запуск теста pytest -s -v test_fixture8_l3_5_s4.py
-# запуск теста c выводом комментария метки skip pytest -rsx -s -v test_fixture8_l3_5_s4.py
+# метка xfail
+# в данном случае тест падает из-за селектора
+# запуск теста pytest -v test_fixture10_l3_5_s5_1.py
+# запуск теста с выводом комментария в консоль pytest -rx -v test_fixture10_l3_5_s5_1.py
 
 import pytest
 from selenium import webdriver
@@ -12,17 +13,15 @@ link = "http://selenium1py.pythonanywhere.com/"
 
 @pytest.fixture(scope="function")
 def browser():
-    print("\n\033[34mstart browser for test..\033[0m")
+    print("\nstart browser for test..")
     browser = webdriver.Chrome()
     yield browser
-    print("\n\033[34mquit browser..\033[0m")
+    print("\nquit browser..")
     browser.quit()
 
 
 class TestMainPage1:
 
-    # тест test_guest_should_see_login_link будет пропущен, потому что для него стоит маркировка skip
-    @pytest.mark.skip
     def test_guest_should_see_login_link(self, browser):
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, "#login_link")
@@ -31,7 +30,8 @@ class TestMainPage1:
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, ".basket-mini .btn-group > a")
 
-    @pytest.mark.skip(reason="Комментарий к пропущенному тесту")
+    # падающий тест xfail пометит как падающий - XFAIL, а рузальтат прогона будет успешным
+    @pytest.mark.xfail(reason="fixing this bug right now")
     def test_guest_should_see_search_button_on_the_main_page(self, browser):
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, "button.favorite")
