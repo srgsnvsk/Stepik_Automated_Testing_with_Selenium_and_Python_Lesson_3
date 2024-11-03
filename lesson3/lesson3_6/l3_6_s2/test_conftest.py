@@ -1,5 +1,5 @@
 # теория
-# файл с тестами
+# файл с тестами pytest -s -v test_conftest.py
 
 from selenium.webdriver.common.by import By
 
