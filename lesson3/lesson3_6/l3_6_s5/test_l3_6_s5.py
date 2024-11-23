@@ -14,8 +14,7 @@ import math
 
 class TestParameterization:
 
-    @pytest.mark.parametrize("lesson_id", [236898, 236899])
-    # "lesson_id", [236895, 236896, 236897, 236898, 236899, 236903, 236904, 236905]
+    @pytest.mark.parametrize("lesson_id", [236895, 236896, 236897, 236898, 236899, 236903, 236904, 236905])
     def test_send_answer(self, browser, load_config, lesson_id):
         link = f"https://stepik.org/lesson/{lesson_id}/step/1"
 

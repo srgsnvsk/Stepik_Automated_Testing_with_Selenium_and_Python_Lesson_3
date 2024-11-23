@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class TestClearData:
 
-    @pytest.mark.parametrize("lesson_id", [236898, 236899])
+    @pytest.mark.parametrize("lesson_id", [236895, 236896, 236897, 236898, 236899, 236903, 236904, 236905])
     def test_clear_form(self, browser, load_config, lesson_id):
         
         def wait(by_locator, condition=EC.element_to_be_clickable):
