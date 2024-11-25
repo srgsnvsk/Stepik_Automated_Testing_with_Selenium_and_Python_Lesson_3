@@ -9,8 +9,6 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import math
 
-# from conftest import final
-
 
 class TestParameterization:
 
@@ -64,5 +62,3 @@ class TestParameterization:
             "Correct!" in message_text
         ), f'Ответ неверный: "{message_text}", а должен быть "Correct!" '
 
-        # if message_text != "Correct!":
-        #     final.append(f"Lesson {lesson_id} - Message: {message_text}")

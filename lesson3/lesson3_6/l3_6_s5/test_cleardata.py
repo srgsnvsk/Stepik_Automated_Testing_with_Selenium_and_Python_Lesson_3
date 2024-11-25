@@ -1,5 +1,6 @@
 # очистка данных
 # выполнять перед запуском теста test_l3_6_s5.py
+# код улучшен добавлением visibility_of_element_located
 
 import pytest
 from selenium.webdriver.common.by import By
@@ -12,8 +13,8 @@ class TestClearData:
     @pytest.mark.parametrize("lesson_id", [236895, 236896, 236897, 236898, 236899, 236903, 236904, 236905])
     def test_clear_form(self, browser, load_config, lesson_id):
         
-        def wait(by_locator):
-            element = WebDriverWait(browser, 60).until(EC.element_to_be_clickable(by_locator))
+        def wait(by_locator, condition=EC.element_to_be_clickable):
+            element = WebDriverWait(browser, 60).until(condition(by_locator))
             return element
         
         link = f"https://stepik.org/lesson/{lesson_id}/step/1"
@@ -29,12 +30,11 @@ class TestClearData:
         assert success_element, "Не удалось войти: изображение профиля не найдено, возможно, не произошла авторизация."
         print("Пользователь авторизован")
         
-        textarea = wait((By.CSS_SELECTOR, ".ember-text-area.textarea.string-quiz__textarea"))
-        if textarea and not textarea.is_enabled():
-            wait((By.CSS_SELECTOR, ".again-btn")).click()
-            textarea = wait((By.CSS_SELECTOR, "[class='ember-text-area ember-view textarea string-quiz__textarea']"))
+        textarea = wait((By.CSS_SELECTOR, ".ember-text-area.textarea.string-quiz__textarea"), EC.visibility_of_element_located)
+        if not textarea.is_enabled():
+            browser.find_element(By.CSS_SELECTOR, ".again-btn").click()
+            wait((By.CSS_SELECTOR, "[class='ember-text-area ember-view textarea string-quiz__textarea']"))
             print("Форма ввода ответа очищена")
         else:
             print("Форму ввода ответа очищать не нужно")
-
         print("Урок готов к решению)")
