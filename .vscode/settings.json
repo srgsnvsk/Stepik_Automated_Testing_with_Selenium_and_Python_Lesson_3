@@ -1,5 +1,7 @@
 {
     "python.testing.pytestArgs": [
+        "--browser_name=chrome", // передача браузера chrome
+        "--browser_name=firefox", // передача браузера firefox
         "lesson3",
         "-v",
         "-s"

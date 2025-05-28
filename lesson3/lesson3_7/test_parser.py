@@ -1,7 +1,9 @@
 # теория
-# запуск тестов в chrome: pytest -s -v --browser_name=chrome test_parser.py
-# запуск тестов в firefox: pytest -s -v --browser_name=firefox test_parser.py
-# 
+# запуск тестов в консоли:
+# chrome: pytest -s -v --browser_name=chrome test_parser.py
+# firefox: pytest -s -v --browser_name=firefox test_parser.py
+# для запуска тестов с помощью Testing:
+# в файле settings.json (лежит в папке .vscode\settings.json) раскоментировать нужную строку
 from selenium.webdriver.common.by import By
 
 link = "http://selenium1py.pythonanywhere.com/"
