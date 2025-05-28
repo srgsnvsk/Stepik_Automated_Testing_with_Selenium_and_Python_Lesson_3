@@ -4,6 +4,7 @@
 import pytest
 from selenium import webdriver
 
+# добавляет пользовательскую опцию командной строки
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default=None,
                      help="Choose browser: chrome or firefox")
@@ -11,7 +12,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="function")
 def browser(request):
-    browser_name = request.config.getoption("browser_name")
+    browser_name = request.config.getoption("browser_name") # извлекает значение --browser_name переданное в командной строке
     browser = None
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
