@@ -1,10 +1,12 @@
 {
     "python.testing.pytestArgs": [
-        "--browser_name=chrome", // передача браузера chrome
-        "--browser_name=firefox", // передача браузера firefox
-        "lesson3",
-        "-v",
-        "-s"
+        // "--browser_name_lesson3_7=chrome", // передача браузера chrome, урок lesson3_7
+        // "--browser_name_lesson3_7=firefox", // передача браузера firefox, урок lesson3_7
+        // "--browser_name_lesson3_8=chrome", // передача браузера chrome, урок lesson3_8
+        // "--browser_name_lesson3_8=firefox", // передача браузера firefox, урок lesson3_8
+        // "lesson3",
+        // "-v",
+        // "-s"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
