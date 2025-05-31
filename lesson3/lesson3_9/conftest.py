@@ -1,4 +1,5 @@
 # теория
+# передача локали в командной строке
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -9,6 +10,7 @@ def pytest_addoption(parser):
     parser.addoption('--browser_name_lesson3_9', action='store', default='chrome',
                      help="Choose browser: '--browser_name=chrome' or '--browser_name=firefox'")
     
+    # addoption передает серверу запрос с заголовком {accept-language: ru, en}, и пользователю отображается русский интерфейс 
     parser.addoption('--language', action='store', default=None,
                      help="Choose language: '--language=en' or '--language=ru'")
     

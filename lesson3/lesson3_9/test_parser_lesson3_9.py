@@ -1,8 +1,9 @@
 # теория
 
 # запуск тестов в консоли:
-# chrome: `cd lesson3\lesson3_8 && pytest -s --browser_name_lesson3_8=chrome test_parser_lesson3_9.py`
-# firefox: `cd lesson3\lesson3_8 && pytest -s --browser_name_lesson3_8=firefox test_parser_lesson3_9.py`
+# chrome: `cd lesson3\lesson3_9 && pytest -s --browser_name_lesson3_9=chrome --language=en test_parser_lesson3_9.py`
+# firefox: `cd lesson3\lesson3_9 && pytest -s --browser_name_lesson3_9=firefox --language=en test_parser_lesson3_9.py`
+# запуск теста без параметра `--language=en` запустит тест по умолчанию на русском
 from selenium.webdriver.common.by import By
 import time
 
